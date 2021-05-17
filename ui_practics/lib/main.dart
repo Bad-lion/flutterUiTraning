@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_practics/balance.dart';
 import 'package:ui_practics/portfolio.dart';
 import './weather1.dart';
 import './weather2.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/wheatherApp": (context) => WeatherApp(),
         "/wheater2": (context) => WeatherApp2(),
-        '/portfolio': (context) => Portfolio()
+        '/portfolio': (context) => Portfolio(),
+        '/balance': (context) => Balance(),
       },
     );
   }
@@ -52,7 +54,9 @@ class MainApp extends StatelessWidget {
               child: Text("Portfolio"),
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: () {
+                Navigator.pushNamed(context, "/balance");
+              },
               child: Text("Balance"),
             ),
             ElevatedButton(
